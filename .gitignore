@@ -7,3 +7,4 @@ dist-newstyle/
 .ghc.environment*
 .shake
 *.code-workspace
+hie.yaml
