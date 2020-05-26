@@ -1,2 +1,6 @@
-packages: */*.cabal
+packages:
+    ghc-tcplugins-extra
+    uom-plugin
+    uom-plugin-tutorial
+    uom-plugin-examples
 tests: True
