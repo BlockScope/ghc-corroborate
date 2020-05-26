@@ -6,3 +6,4 @@ dist-newstyle/
 .stack-work*
 .ghc.environment*
 .shake
+*.code-workspace
