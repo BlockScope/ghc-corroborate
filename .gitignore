@@ -8,3 +8,4 @@ dist-newstyle/
 .shake
 *.code-workspace
 hie.yaml
+*.swn
