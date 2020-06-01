@@ -1,0 +1,44 @@
+name: stack
+
+on:
+  push:
+    branches: [ci-stack, wip/ghc-lib]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: mstksg/get-package@v1
+      name: Install OS Packages
+      with:
+        apt-get: libgmp-dev
+
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - uses: mstksg/setup-stack@v1
+      name: Setup Stack
+
+    - name: Cache Key
+      id: cache_key
+      run: echo ::set-output name=key::$(md5sum stack.yaml | awk '{print $1}')
+
+    - uses: actions/cache@v1
+      name: Cache ~/.stack
+      id: cache
+      with:
+        path: ~/.stack
+        key: ${{ matrix.os }}-${{ steps.cache_key.outputs.key }}
+
+    - name: build tests
+      run: stack test --no-run-tests --no-terminal
+
+    - name: run tests
+      run: stack test --no-terminal --test-arguments "--color=always"
