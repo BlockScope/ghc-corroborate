@@ -38,5 +38,5 @@ jobs:
         cabal v2-update
         cabal v2-build all --enable-tests
 
-    - name: test
-      run: cabal v2-test all --test-show-details=direct --test-option="--color=always"
+    - name: test uom-plugin
+      run: cabal v2-test uom-plugin --test-show-details=direct --test-option="--color=always"

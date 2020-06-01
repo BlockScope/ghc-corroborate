@@ -40,5 +40,8 @@ jobs:
     - name: build tests
       run: stack test --no-run-tests --no-terminal
 
-    - name: run tests
-      run: stack test --no-terminal --test-arguments "--color=always"
+    - name: test uom-plugin
+      run: stack test uom-plugin --no-terminal --test-arguments "--color=always"
+
+    - name: test uom-plugin-tutorial
+      run: stack test uom-plugin-tutorial --no-terminal --test-arguments "--color=always"
