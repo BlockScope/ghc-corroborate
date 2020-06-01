@@ -1,5 +1,6 @@
 resolver: lts-12.16
 packages:
+- ghc-tcplugins-extra
 - uom-plugin
 - uom-plugin-tutorial
 - uom-plugin-examples
