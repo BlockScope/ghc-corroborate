@@ -19,11 +19,11 @@ Grab the source.
 
 Then build and run with any of these methods:
 
-* ### With Cabal new-build
+* ### With Cabal
 
 ```
-> cabal new-build all
-> cabal new-exec Examples
+> cabal v2-build all
+> cabal v2-exec Examples
 ```
 
 * ### With Nix and Cabal
@@ -33,7 +33,7 @@ The default compiler is set in `./nix/config.nix` as `compiler ? "ghc822"`;
 ```
 > nix-shell
 
-[nix-shell:]$ cabal new-build all
+[nix-shell:]$ cabal v2-build all
 Resolving dependencies...
 Up to date
 ```
@@ -55,31 +55,20 @@ If the conditions were not in place then what they do is equivalent to;
 ```
 > nix-shell -p haskell.compiler.ghc822 -p haskell.packages.ghc822.cabal-install
 
-[nix-shell:]$ cabal new-build uom-plugin --disable-tests
+[nix-shell:]$ cabal v2-build uom-plugin --disable-tests
 Resolving dependencies...
 Build profile: -w ghc-8.2.2 -O1
 ...
 ```
 
-* ### Within a Cabal Sandbox
-
-```
-> cabal sandbox init
-(cd uom-plugin && cabal sandbox init --sandbox=../.cabal-sandbox && cabal install)
-> cd uom-plugin-examples/
-uom-plugin-examples> cabal sandbox init --sandbox=../.cabal-sandbox
-uom-plugin-examples> cabal build
-uom-plugin-examples> dist/build/Examples/Examples
-```
-
 * ### With Stack
 
-From the set of `stack-<ghc-version>.yaml` provided files, picking the one that
-corresponds to ghc-8.2.2;
+From the set of `stack/stack-<ghc-version>.yaml` provided files, picking the
+one that corresponds to ghc-8.2.2;
 
 ```
-> stack build --stack-yaml=stack-8.2.2.yaml
-> stack exec Examples --stack-yaml=stack-8.2.2.yaml
+> stack build --stack-yaml=stack/stack-8.2.2.yaml
+> stack exec Examples --stack-yaml=stack/stack-8.2.2.yaml
 ```
 
 ### Continuous Integration
