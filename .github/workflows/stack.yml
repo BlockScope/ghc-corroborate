@@ -52,4 +52,4 @@ jobs:
       run: stack test uom-plugin --no-terminal --test-arguments "--color=always"
 
     - name: test thoralf-plugin
-      run: stack test thoralf --no-terminal --test-arguments "--color=always"
+      run: stack test thoralf-plugin --no-terminal --test-arguments "--color=always"
