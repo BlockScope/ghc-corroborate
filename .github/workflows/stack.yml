@@ -37,6 +37,11 @@ jobs:
         path: ~/.stack
         key: ${{ matrix.os }}-${{ steps.cache_key.outputs.key }}
 
+    - uses: pavpanchekha/setup-z3@v1.2
+      name: setup z3
+      with:
+        version: "4.8.7"
+
     - name: build tests
       run: stack test --no-run-tests --no-terminal
 
