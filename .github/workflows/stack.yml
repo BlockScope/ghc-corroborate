@@ -2,7 +2,7 @@ name: stack
 
 on:
   push:
-    branches: [ci-stack, wip/ghc-lib]
+    branches: [ci-stack, wip/ghc-lib, wip/thoralf]
   pull_request:
     branches: [master]
 
@@ -40,8 +40,11 @@ jobs:
     - name: build tests
       run: stack test --no-run-tests --no-terminal
 
+    - name: test uom-plugin-tutorial
+      run: stack test uom-plugin-tutorial --no-terminal --test-arguments "--color=always"
+
     - name: test uom-plugin
       run: stack test uom-plugin --no-terminal --test-arguments "--color=always"
 
-    - name: test uom-plugin-tutorial
-      run: stack test uom-plugin-tutorial --no-terminal --test-arguments "--color=always"
+    - name: test thoralf
+      run: stack test thoralf --no-terminal --test-arguments "--color=always"

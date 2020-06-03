@@ -2,7 +2,7 @@ name: cabal
 
 on:
   push:
-    branches: [ci-cabal, wip/ghc-lib]
+    branches: [ci-cabal, wip/ghc-lib, wip/thoralf]
   pull_request:
     branches: [master]
 
@@ -33,6 +33,11 @@ jobs:
         path: ~/.cabal/store
         key: ${{ runner.os }}-${{ matrix.ghc }}-cabal
 
+    - uses: pavpanchekha/setup-z3@v1.2
+      name: setup z3
+      with:
+        version: "4.8.7"
+
     - name: build
       run: |
         cabal v2-update
@@ -40,3 +45,6 @@ jobs:
 
     - name: test uom-plugin
       run: cabal v2-test uom-plugin --test-show-details=direct --test-option="--color=always"
+
+    - name: test thoralf
+      run: cabal v2-test thoralf --test-show-details=direct --test-option="--color=always"
