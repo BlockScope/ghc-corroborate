@@ -41,10 +41,17 @@ jobs:
     - name: build
       run: |
         cabal v2-update
-        cabal v2-build all --enable-tests
+        cabal v2-build all:libs
+        cabal v2-build thoralf-plugin:rows --enable-tests
+        cabal v2-build thoralf-plugin:units --enable-tests
+        cabal v2-build uom-plugin:tests --enable-tests
+        cabal v2-build uom-plugin-examples
 
     - name: test uom-plugin
       run: cabal v2-test uom-plugin --test-show-details=direct --test-option="--color=always"
 
-    - name: test thoralf
-      run: cabal v2-test thoralf --test-show-details=direct --test-option="--color=always"
+    - name: test thoralf rows
+      run: cabal v2-test thoralf:rows --test-show-details=direct --test-option="--color=always"
+
+    - name: test thoralf units
+      run: cabal v2-test thoralf:units --test-show-details=direct --test-option="--color=always"
