@@ -21,8 +21,6 @@
     , "-Wredundant-constraints"
     , "-fhide-source-paths"
     ]
-, default-extensions =
-    [ "PackageImports" ]
 , dependencies =
     [ "base >=4.9.1.0 && <5" ]
 }
