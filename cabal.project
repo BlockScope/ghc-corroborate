@@ -1,5 +1,6 @@
 packages:
     ghc-tcplugins-extra
+    ghc-tcplugins-api
     thoralf
     uom-plugin
     uom-plugin-defs
