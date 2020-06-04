@@ -1,0 +1,116 @@
+cabal-version: 2.0
+
+-- This file has been generated from package.dhall by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4560410dd1917a058cade614e17b5db8ea4c33cd2b908787fa6d8ced687cdede
+
+name:           ghc-tcplugins-api
+version:        0.1.0
+synopsis:       An API for GHC typechecker plugins
+description:    The GHC API changes over time. This package offers a consistent API.
+category:       Type System
+stability:      experimental
+homepage:       https://github.com/blockscope/ghc-tcplugins-api#readme
+bug-reports:    https://github.com/blockscope/ghc-tcplugins-api/issues
+author:         Phil de Joux
+maintainer:     phil.dejoux@blockscope.com
+copyright:      © 2020 Phil de Joux, © 2020 Block Scope Limited
+license:        MPL-2.0
+license-file:   LICENSE.md
+tested-with:    GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.3
+build-type:     Simple
+extra-source-files:
+    README.md
+    LICENSE.md
+    defaults.dhall
+    package.dhall
+
+source-repository head
+  type: git
+  location: https://github.com/blockscope/ghc-tcplugins-api
+
+library
+  exposed-modules:
+      GhcApi.Constraint
+      GhcApi.Predicate
+      GhcApi.GhcPlugins
+      Internal.Constraint
+      Internal.Evidence
+      Internal.Compare
+      Internal.Shim
+      Internal.Wrap
+      Internal
+  default-extensions: PackageImports
+  ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wcompat -Widentities -Wredundant-constraints -fhide-source-paths
+  build-depends:
+      base >=4.9.1.0 && <5
+    , ghc-tcplugins-extra >=0.5
+  if impl(ghc >= 8.10.0)
+    hs-source-dirs:
+        src-ghc
+        src-ghc-8.10
+    build-depends:
+        ghc >=8.10 && <8.12
+  if impl(ghc >= 8.8.0) && impl(ghc < 8.10.0)
+    hs-source-dirs:
+        src-ghc
+        src-ghc-8.8
+    build-depends:
+        ghc >=8.8 && <8.10
+    mixins:
+        ghc hiding ()
+      , ghc (TcRnTypes as TcRnTypes)
+      , ghc (Type as Type)
+      , ghc (TcRnTypes as Constraint)
+      , ghc (Type as Predicate)
+  if impl(ghc >= 8.6.0) && impl(ghc < 8.8.0)
+    hs-source-dirs:
+        src-ghc
+        src-ghc-8.6
+    build-depends:
+        ghc >=8.6 && <8.8
+    mixins:
+        ghc hiding ()
+      , ghc (TcRnTypes as TcRnTypes)
+      , ghc (Type as Type)
+      , ghc (TcRnTypes as Constraint)
+      , ghc (Type as Predicate)
+  if impl(ghc >= 8.4.0) && impl(ghc < 8.6.0)
+    hs-source-dirs:
+        src-ghc
+        src-ghc-8.4
+    build-depends:
+        ghc >=8.4 && <8.6
+    mixins:
+        ghc hiding ()
+      , ghc (TcRnTypes as TcRnTypes)
+      , ghc (Type as Type)
+      , ghc (TcRnTypes as Constraint)
+      , ghc (Type as Predicate)
+  if impl(ghc >= 8.2.0) && impl(ghc < 8.4.0)
+    hs-source-dirs:
+        src-ghc
+        src-ghc-8.2
+    build-depends:
+        ghc >=8.2 && <8.4
+    mixins:
+        ghc hiding ()
+      , ghc (TcRnTypes as TcRnTypes)
+      , ghc (Type as Type)
+      , ghc (TcRnTypes as Constraint)
+      , ghc (Type as Predicate)
+  if impl(ghc >= 8.0.0) && impl(ghc < 8.2.0)
+    hs-source-dirs:
+        src-ghc
+        src-ghc-8.0
+    build-depends:
+        ghc >=8.0 && <8.2
+    mixins:
+        ghc hiding ()
+      , ghc (TcRnTypes as TcRnTypes)
+      , ghc (Type as Type)
+      , ghc (TcRnTypes as Constraint)
+      , ghc (Type as Predicate)
+  default-language: Haskell2010
