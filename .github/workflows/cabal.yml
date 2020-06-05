@@ -15,7 +15,6 @@ jobs:
         cabal: ["3.0"]
         ghc:
           - "8.2.2"
-          - "8.4.4"
 
     steps:
     - uses: actions/checkout@v2

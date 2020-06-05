@@ -30,14 +30,14 @@ jobs:
 
     - name: Cache Key
       id: cache_key
-      run: echo ::set-output name=key::$(md5sum stack.yaml | awk '{print $1}')
+      run: echo ::set-output name=key::$(md5sum ./stack/stack-${{ matrix.ghc }}.yaml | awk '{print $1}')
 
     - uses: actions/cache@v1
       name: Cache ~/.stack
       id: cache
       with:
         path: ~/.stack
-        key: ${{ matrix.os }}-${{ steps.cache_key.outputs.key }}
+        key: ${{ matrix.os }}-${{ matrix.ghc }}-${{ steps.cache_key.outputs.key }}
 
     - uses: pavpanchekha/setup-z3@v1.2
       name: setup z3
