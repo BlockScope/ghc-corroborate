@@ -48,7 +48,7 @@ jobs:
         cabal v2-build uom-plugin:tests --enable-tests
 
     - name: build examples
-      if: ${{ matrix.ghc == "8.2.2" }}
+      if: ${{ matrix.ghc == '8.2.2' }}
       run: cabal v2-build uom-plugin-examples
 
     - name: test uom-plugin
