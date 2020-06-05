@@ -160,4 +160,39 @@ in    defs
                 ]
             }
           ]
+      , tests =
+          { hlint =
+              { dependencies =
+                  "base"
+              , ghc-options =
+                  testopts
+              , main =
+                  "HLint.hs"
+              , source-dirs =
+                  "test-suite-hlint"
+              , when =
+                  [ { condition =
+                        "impl(ghc >= 8.6.0)"
+                    , dependencies =
+                        "hlint"
+                    , buildable =
+                        True
+                    }
+                  , { condition =
+                        "impl(ghc >= 8.4.0) && impl(ghc < 8.6.0)"
+                    , dependencies =
+                        "hlint < 2.1.18"
+                    , buildable =
+                        True
+                    }
+                  , { condition =
+                        "impl(ghc < 8.4.0)"
+                    , dependencies =
+                        "hlint"
+                    , buildable =
+                        False
+                    }
+                  ]
+              }
+          }
       }
