@@ -8,5 +8,5 @@ evDFunApp' = EvDFunApp
 evCast' :: EvTerm -> TcCoercionR -> EvTerm
 evCast' = EvCast
 
-terms :: Type -> Type -> [EvTerm]
-terms t1 t2 = [evByFiat "units" t1 t2]
+terms :: String -> Type -> Type -> [EvTerm]
+terms s t1 t2 = [evByFiat s t1 t2]

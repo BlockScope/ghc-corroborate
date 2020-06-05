@@ -7,12 +7,12 @@ evDFunApp' = evDFunApp
 
 evCast' :: EvTerm -> TcCoercion -> EvTerm
 evCast' (EvExpr e)  = evCast e
-evCast' EvTypeable{} = error "Can't evCast (EvTypeable _ _)"
-evCast' EvFun{} = error "Can't evCast (EvFun _ _ _ _)"
+evCast' EvTypeable{} = error "Can't evCast EvTypeable{}"
+evCast' EvFun{} = error "Can't evCast EvFun{}"
 
-terms :: Type -> Type -> [EvExpr]
-terms t1 t2 =
-    case evByFiat "units" t1 t2 of
+terms :: String -> Type -> Type -> [EvExpr]
+terms s t1 t2 =
+    case evByFiat s t1 t2 of
         EvExpr e -> [e]
         EvTypeable{} -> []
         EvFun{} -> []
