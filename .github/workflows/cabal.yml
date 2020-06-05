@@ -46,7 +46,10 @@ jobs:
         cabal v2-build thoralf-plugin:rows --enable-tests
         cabal v2-build thoralf-plugin:units --enable-tests
         cabal v2-build uom-plugin:tests --enable-tests
-        cabal v2-build uom-plugin-examples
+
+    - name: build examples
+      if: ${{ matrix.ghc == "8.2.2" }}
+      run: cabal v2-build uom-plugin-examples
 
     - name: test uom-plugin
       run: cabal v2-test uom-plugin --test-show-details=direct --test-option="--color=always"
