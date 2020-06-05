@@ -4,7 +4,7 @@ cabal-version: 2.0
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4560410dd1917a058cade614e17b5db8ea4c33cd2b908787fa6d8ced687cdede
+-- hash: 437899f69eab182b6769717309706d402c5b9dc291c5fbdfe49c413c5b5f88cc
 
 name:           ghc-tcplugins-api
 version:        0.1.0
@@ -42,8 +42,7 @@ library
       Internal.Shim
       Internal.Wrap
       Internal
-  default-extensions: PackageImports
-  ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wcompat -Widentities -Wredundant-constraints -fhide-source-paths
+  ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wcompat -Widentities -Wredundant-constraints
   build-depends:
       base >=4.9.1.0 && <5
     , ghc-tcplugins-extra >=0.5

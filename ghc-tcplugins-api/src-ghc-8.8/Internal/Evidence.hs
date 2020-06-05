@@ -11,4 +11,8 @@ evCast' EvTypeable{} = error "Can't evCast (EvTypeable _ _)"
 evCast' EvFun{} = error "Can't evCast (EvFun _ _ _ _)"
 
 terms :: Type -> Type -> [EvExpr]
-terms t1 t2 = [let (EvExpr e) = evByFiat "units" t1 t2 in e]
+terms t1 t2 =
+    case evByFiat "units" t1 t2 of
+        EvExpr e -> [e]
+        EvTypeable{} -> []
+        EvFun{} -> []
