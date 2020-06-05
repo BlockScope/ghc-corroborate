@@ -12,6 +12,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
+        ghc:
+          - "8.2.2"
 
     steps:
     - uses: mstksg/get-package@v1
@@ -43,13 +45,13 @@ jobs:
         version: "4.8.7"
 
     - name: build tests
-      run: stack test --no-run-tests --no-terminal
+      run: stack test --no-run-tests --no-terminal --stack-yaml=./stack/stack-{{ matrix.ghc }}.yaml
 
     - name: test uom-plugin-tutorial
-      run: stack test uom-plugin-tutorial --no-terminal --test-arguments "--color=always"
+      run: stack test uom-plugin-tutorial --no-terminal --test-arguments "--color=always" --stack-yaml=./stack/stack-{{ matrix.ghc }}.yaml
 
     - name: test uom-plugin
-      run: stack test uom-plugin --no-terminal --test-arguments "--color=always"
+      run: stack test uom-plugin --no-terminal --test-arguments "--color=always" --stack-yaml=./stack/stack-{{ matrix.ghc }}.yaml
 
     - name: test thoralf-plugin
-      run: stack test thoralf-plugin --no-terminal --test-arguments "--color=always"
+      run: stack test thoralf-plugin --no-terminal --test-arguments "--color=always" --stack-yaml=./stack/stack-{{ matrix.ghc }}.yaml
