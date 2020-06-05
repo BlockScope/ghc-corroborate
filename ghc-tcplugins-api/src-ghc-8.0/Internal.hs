@@ -9,25 +9,30 @@ module Internal
     , module TyCoRep
     , module Unique
     , module GHC.TcPluginM.Extra
+    , module TcTypeNats
+    , module Class
+    , module IOEnv
     ) where
 
 import GhcPlugins
-    ( PredType, FastString(..), Role(..), TyCoVarSet, Plugin(..), ModuleName
-    , Kind, TyVar, Id, DFunId, Coercion, TyCon(..), Outputable(..)
+    ( PredType, FastString(..), Role(..), TyCoVarSet, Plugin(..), ModuleName, Module
+    , Kind, TyVar, Var, Id, DFunId, Coercion, TyCon(..), Outputable(..), FindResult(..)
     , (<>), (<+>), ($$)
     , isNumLitTy, isStrLitTy, isFamilyTyCon
     , mkNumLitTy, mkStrLitTy
-    , mkTyConApp, mkTcTyVar, mkPrimEqPred, mkTyVarTy
+    , mkTyConApp, mkTcTyVar, mkPrimEqPred, mkTyVarTy, isTcTyVar
     , dataConName, dataConWrapId, promoteDataCon
     , heqTyCon, heqDataCon
     , consDataCon, nilDataCon
-    , typeKind, typeSymbolKind
+    , typeKind, typeSymbolKind, typeSymbolKindCon, typeNatKindCon, tyVarKind
     , tyCoVarsOfType, tyCoVarsOfTypes, tyConDataCons
     , mkModuleName, mkSysTvName
-    , occName, occNameFS, mkTcOcc, text, fsLit
+    , getOccName, occName, occNameFS, mkTcOcc, occNameString
+    , text, fsLit, unpackFS, showSDocUnsafe
     , thenCmp, getUnique
-    , splitTyConApp_maybe
     , defaultPlugin, mkUnivCo, elemVarSet, coreView
+    , boolTyCon, promotedTrueDataCon, promotedFalseDataCon
+    , getTyVar_maybe, splitTyConApp_maybe, splitFunTy_maybe
     )
 import Constraint
     ( Ct(..), CtLoc
@@ -38,13 +43,18 @@ import Constraint
 import Predicate (PredTree(..), EqRel(..), classifyPredType)
 import TcEvidence (EvTerm(..), TcCoercion, TcCoercionR)
 import TcPluginM
-    ( TcPluginM
-    , tcPluginTrace, matchFam, newFlexiTyVar, isTouchableTcPluginM
-    , tcLookupTyCon, zonkCt
-    , newUnique
+    ( TcPluginM, unsafeTcPluginTcM, tcPluginIO, tcPluginTrace
+    , matchFam, newFlexiTyVar, zonkCt, newUnique, isTouchableTcPluginM
+    , tcLookupClass, tcLookupTyCon, findImportedModule, lookupOrig
     )
-import TcRnTypes (TcPlugin(..), TcPluginResult(..))
-import TcType (tcSplitTyConApp_maybe, vanillaSkolemTv)
-import TyCoRep (UnivCoProvenance(PluginProv), Type(..))
+import TcRnTypes (TcPlugin(..), TcPluginResult(..), WantedConstraints)
+import TcType (vanillaSkolemTv, tcGetTyVar_maybe, isMetaTyVar)
+import TyCoRep
+    ( UnivCoProvenance(PluginProv)
+    , Type(..)
+    )
 import Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
+import TcTypeNats (typeNatAddTyCon, typeNatSubTyCon)
+import Class (Class)
+import IOEnv (newMutVar, readMutVar, writeMutVar)
