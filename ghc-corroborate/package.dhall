@@ -6,10 +6,11 @@ in    defs
     ⫽ { name =
           "ghc-corroborate"
       , synopsis =
-          "An API for GHC typechecker plugins"
+          "An flatter API for GHC typechecker plugins"
       , description =
-          ''The GHC API changes over time. This package bundles most imports
-          needed by typechecker plugins into one module, GHC.Corroborate.''
+          ''The GHC API changes over time. This package re-exports most GHC
+          imports needed by typechecker plugins from its GHC.Corroborate module
+          with a stable API over multiple GHC versions.''
       , category =
           "Type System"
       , github =
