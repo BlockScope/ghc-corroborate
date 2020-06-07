@@ -46,7 +46,7 @@ import TcEvidence (EvTerm(..), TcCoercion, TcCoercionR)
 import TcPluginM
     ( TcPluginM, unsafeTcPluginTcM, tcPluginIO, tcPluginTrace
     , matchFam, newFlexiTyVar, zonkCt, newUnique, isTouchableTcPluginM
-    , tcLookupClass, tcLookupTyCon, findImportedModule, lookupOrig
+    , findImportedModule
     )
 import TcRnTypes (TcPlugin(..), TcPluginResult(..), WantedConstraints)
 import TcType (vanillaSkolemTv, tcGetTyVar_maybe, isMetaTyVar)
