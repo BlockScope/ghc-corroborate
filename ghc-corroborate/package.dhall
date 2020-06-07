@@ -31,6 +31,7 @@ in    defs
               , "GHC.Corroborate.Compare"
               , "GHC.Corroborate.Shim"
               , "GHC.Corroborate.Wrap"
+              , "GHC.Corroborate.Divulge"
               , "GHC.Corroborate"
               ]
           , other-modules =
