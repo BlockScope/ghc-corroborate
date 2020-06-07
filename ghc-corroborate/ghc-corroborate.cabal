@@ -4,13 +4,14 @@ cabal-version: 2.0
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 36393532bfebf923969cc47aba8607c04312b9e0e8200539ca757326cb889ee1
+-- hash: 0a5705205850d32fb271c86117b3762460cbbc8605841efa261f1877c752d0cf
 
 name:           ghc-corroborate
 version:        0.1.0
-synopsis:       An API for GHC typechecker plugins
-description:    The GHC API changes over time. This package bundles most imports
-                          needed by typechecker plugins into one module, GHC.Corroborate.
+synopsis:       An flatter API for GHC typechecker plugins
+description:    The GHC API changes over time. This package re-exports most GHC
+                          imports needed by typechecker plugins from its GHC.Corroborate module
+                          with a stable API over multiple GHC versions.
 category:       Type System
 stability:      experimental
 homepage:       https://github.com/blockscope/ghc-corroborate#readme
