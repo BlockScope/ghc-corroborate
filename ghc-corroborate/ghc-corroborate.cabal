@@ -4,7 +4,7 @@ cabal-version: 2.0
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 769628dc34347a568285d07faf8a391a84f5f5a91edecb431ab7089f124261a9
+-- hash: 36393532bfebf923969cc47aba8607c04312b9e0e8200539ca757326cb889ee1
 
 name:           ghc-corroborate
 version:        0.1.0
@@ -42,6 +42,7 @@ library
       GHC.Corroborate.Compare
       GHC.Corroborate.Shim
       GHC.Corroborate.Wrap
+      GHC.Corroborate.Divulge
       GHC.Corroborate
   ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wcompat -Widentities -Wredundant-constraints
   build-depends:
