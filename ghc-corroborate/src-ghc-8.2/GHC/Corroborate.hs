@@ -37,7 +37,8 @@ module GHC.Corroborate
     ) where
 
 import GhcPlugins
-    ( PredType, FastString(..), Role(..), TyCoVarSet, Plugin(..), ModuleName, Module
+    ( Plugin(..), PluginRecompile(..)
+    , PredType, FastString(..), Role(..), TyCoVarSet, ModuleName, Module
     , Kind, TyVar, Var, Id, DFunId, Coercion, TyCon(..), Outputable(..), FindResult(..)
     , (<>), (<+>), ($$)
     , isNumLitTy, isStrLitTy, isFamilyTyCon
