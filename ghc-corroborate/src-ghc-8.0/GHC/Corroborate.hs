@@ -37,7 +37,8 @@ module GHC.Corroborate
     ) where
 
 import GhcPlugins
-    ( Plugin(..), PluginRecompile(..)
+    ( Plugin(..)
+    , defaultPlugin
     , PredType, FastString(..), Role(..), TyCoVarSet, ModuleName, Module
     , Kind, TyVar, Var, Id, DFunId, Coercion, TyCon(..), Outputable(..), FindResult(..)
     , (<>), (<+>), ($$)
@@ -53,7 +54,7 @@ import GhcPlugins
     , getOccName, occName, occNameFS, mkTcOcc, occNameString
     , text, fsLit, unpackFS, showSDocUnsafe
     , thenCmp, getUnique
-    , defaultPlugin, mkUnivCo, elemVarSet, coreView
+    , mkUnivCo, elemVarSet, coreView
     , boolTyCon, promotedTrueDataCon, promotedFalseDataCon
     , getTyVar_maybe, splitTyConApp_maybe, splitFunTy_maybe
     )
