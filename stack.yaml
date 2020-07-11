@@ -4,6 +4,7 @@ packages:
 - ghc-tcplugins-extra
 - ghc-corroborate
 - thoralf
+- uom-th
 - uom-quantity
 - uom-plugin
 - uom-plugin-defs

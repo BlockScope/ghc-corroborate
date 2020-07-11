@@ -7,4 +7,5 @@ packages:
     uom-plugin-defs
     uom-plugin-tutorial
     uom-plugin-examples
+    uom-th
 tests: True
