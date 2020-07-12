@@ -1,8 +1,9 @@
 resolver: lts-11.22
 packages:
 - build
-- ghc-tcplugins-extra
 - ghc-corroborate
+- ghc-tcplugins-extra
+- ghc-tcplugins-trace
 - thoralf
 - uom-th
 - uom-quantity

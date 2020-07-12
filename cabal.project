@@ -1,6 +1,7 @@
 packages:
-    ghc-tcplugins-extra
     ghc-corroborate
+    ghc-tcplugins-extra
+    ghc-tcplugins-trace
     thoralf
     uom-quantity
     uom-plugin
