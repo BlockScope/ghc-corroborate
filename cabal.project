@@ -10,3 +10,4 @@ packages:
     uom-plugin-examples
     uom-th
 tests: True
+write-ghc-environment-files: always
