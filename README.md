@@ -207,3 +207,10 @@ uom-plugin-tutorial> Examples: 64  Tried: 64  Errors: 0  Failures: 0
 uom-plugin-tutorial> Test suite doctest passed
 Completed 15 action(s).
 ```
+
+To tests of uom-plugin with color.
+
+```
+> stack test uom-plugin --no-terminal --test-arguments "--color=always"
+...
+```
