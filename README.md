@@ -13,7 +13,7 @@ simplifies constraints and makes substitutions.
 [ghc-tcplugins-extra]: https://github.com/BlockScope/ghc-tcplugins-extra
 [units-parser]: https://github.com/adamgundry/units-parser
 
-The uom-plugin depends on [ghc-tcplugins-extra][ghc-tcplugins-extra] and
+The `uom-plugin` depends on [ghc-tcplugins-extra][ghc-tcplugins-extra] and
 [units-parser][units-parser]. It defines a quasiquoter for writing units with
 measures, such as `[u| 9.8 m/s^2 |]`.
 
