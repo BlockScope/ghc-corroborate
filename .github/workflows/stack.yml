@@ -42,7 +42,7 @@ jobs:
         path: ~/.stack
         key: ${{ matrix.os }}-${{ matrix.ghc }}-${{ steps.cache_key.outputs.key }}
 
-    - uses: pavpanchekha/setup-z3@v1.2
+    - uses: pavpanchekha/setup-z3@v1.2.2
       name: setup z3
       with:
         version: "4.8.7"
