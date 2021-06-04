@@ -8,39 +8,18 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        ghc:
-          - "8.2.2"
-          - "8.4.4"
-          - "8.6.5"
-          - "8.8.3"
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: mstksg/get-package@v1
-      name: Install OS Packages
-      with:
-        apt-get: libgmp-dev
-
     - uses: actions/checkout@v2
       with:
         submodules: true
 
-    - uses: mstksg/setup-stack@v2
+    - uses: haskell/actions/setup@v1
       name: Setup Stack
-
-    - name: Cache Key
-      id: cache_key
-      run: echo ::set-output name=key::$(md5sum ./stack/stack-${{ matrix.ghc }}.yaml | awk '{print $1}')
-
-    - uses: actions/cache@v1
-      name: Cache ~/.stack
-      id: cache
       with:
-        path: ~/.stack
-        key: ${{ matrix.os }}-${{ matrix.ghc }}-${{ steps.cache_key.outputs.key }}
+        enable-stack: true
+        stack-version: 'latest'
 
     - uses: pavpanchekha/setup-z3@1.2.2
       name: setup z3
