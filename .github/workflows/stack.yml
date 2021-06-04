@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        cabal: ["3.4"]
         ghc:
           - "8.2.2"
           - "8.4.4"
@@ -27,6 +28,7 @@ jobs:
       with:
         enable-stack: true
         stack-version: 'latest'
+        cabal-version: ${{ matrix.cabal }}
 
     - uses: pavpanchekha/setup-z3@1.2.2
       name: setup z3
