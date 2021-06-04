@@ -28,7 +28,7 @@ jobs:
       with:
         submodules: true
 
-    - uses: mstksg/setup-stack@v1
+    - uses: mstksg/setup-stack@v2
       name: Setup Stack
 
     - name: Cache Key
