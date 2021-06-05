@@ -46,6 +46,50 @@ number of unit tests.
   `uom-plugin-defs`.
 * Rearranged the modules of each plugin for similarity between both.
 
+## Building
+
+To use [hpack-dhall][hpack-dhall] to format `**/package.dhall` files and then
+generate `**/*.cabal` files:
+
+```
+> ./stack-shake-build.sh cabal-files
+- build-uom-plugin
+# dhall (for dhall-format-uom-th)
+# dhall-hpack-cabal (for hpack-dhall-uom-th)
+uom-th.cabal is up-to-date
+# dhall (for dhall-format-uom-quantity)
+# dhall-hpack-cabal (for hpack-dhall-uom-quantity)
+uom-quantity.cabal is up-to-date
+# dhall (for dhall-format-uom-plugin-tutorial)
+# dhall-hpack-cabal (for hpack-dhall-uom-plugin-tutorial)
+uom-plugin-tutorial.cabal is up-to-date
+# dhall (for dhall-format-uom-plugin-examples)
+# dhall-hpack-cabal (for hpack-dhall-uom-plugin-examples)
+uom-plugin-examples.cabal is up-to-date
+# dhall (for dhall-format-uom-plugin-defs)
+# dhall-hpack-cabal (for hpack-dhall-uom-plugin-defs)
+uom-plugin-defs.cabal is up-to-date
+# dhall (for dhall-format-uom-plugin)
+# dhall-hpack-cabal (for hpack-dhall-uom-plugin)
+uom-plugin.cabal is up-to-date
+# dhall (for dhall-format-thoralf)
+# dhall-hpack-cabal (for hpack-dhall-thoralf)
+thoralf-plugin.cabal is up-to-date
+# dhall (for dhall-format-ghc-tcplugins-trace)
+# dhall-hpack-cabal (for hpack-dhall-ghc-tcplugins-trace)
+ghc-tcplugins-trace.cabal is up-to-date
+# dhall (for dhall-format-ghc-tcplugins-extra)
+# dhall-hpack-cabal (for hpack-dhall-ghc-tcplugins-extra)
+ghc-tcplugins-extra.cabal is up-to-date
+# dhall (for dhall-format-ghc-corroborate)
+# dhall-hpack-cabal (for hpack-dhall-ghc-corroborate)
+ghc-corroborate.cabal is up-to-date
+# dhall (for dhall-format-build)
+# dhall-hpack-cabal (for hpack-dhall-build)
+build-uom-plugin.cabal is up-to-date
+Build completed in 0:01m
+```
+
 ## Testing
 
 * ### With Cabal
@@ -211,7 +255,7 @@ uom-plugin-tutorial> Test suite doctest passed
 Completed 15 action(s).
 ```
 
-To tests of uom-plugin with color.
+To see tests of uom-plugin with color but no build output to the terminal:
 
 ```
 > stack test uom-plugin --no-terminal --test-arguments "--color=always"
