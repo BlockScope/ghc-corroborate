@@ -48,46 +48,10 @@ number of unit tests.
 
 ## Building
 
-To use [hpack-dhall][hpack-dhall] to format `**/package.dhall` files and then
-generate `**/*.cabal` files:
+To format `**/package.dhall` files and generate `**/*.cabal` files:
 
 ```
 > ./stack-shake-build.sh cabal-files
-- build-uom-plugin
-# dhall (for dhall-format-uom-th)
-# dhall-hpack-cabal (for hpack-dhall-uom-th)
-uom-th.cabal is up-to-date
-# dhall (for dhall-format-uom-quantity)
-# dhall-hpack-cabal (for hpack-dhall-uom-quantity)
-uom-quantity.cabal is up-to-date
-# dhall (for dhall-format-uom-plugin-tutorial)
-# dhall-hpack-cabal (for hpack-dhall-uom-plugin-tutorial)
-uom-plugin-tutorial.cabal is up-to-date
-# dhall (for dhall-format-uom-plugin-examples)
-# dhall-hpack-cabal (for hpack-dhall-uom-plugin-examples)
-uom-plugin-examples.cabal is up-to-date
-# dhall (for dhall-format-uom-plugin-defs)
-# dhall-hpack-cabal (for hpack-dhall-uom-plugin-defs)
-uom-plugin-defs.cabal is up-to-date
-# dhall (for dhall-format-uom-plugin)
-# dhall-hpack-cabal (for hpack-dhall-uom-plugin)
-uom-plugin.cabal is up-to-date
-# dhall (for dhall-format-thoralf)
-# dhall-hpack-cabal (for hpack-dhall-thoralf)
-thoralf-plugin.cabal is up-to-date
-# dhall (for dhall-format-ghc-tcplugins-trace)
-# dhall-hpack-cabal (for hpack-dhall-ghc-tcplugins-trace)
-ghc-tcplugins-trace.cabal is up-to-date
-# dhall (for dhall-format-ghc-tcplugins-extra)
-# dhall-hpack-cabal (for hpack-dhall-ghc-tcplugins-extra)
-ghc-tcplugins-extra.cabal is up-to-date
-# dhall (for dhall-format-ghc-corroborate)
-# dhall-hpack-cabal (for hpack-dhall-ghc-corroborate)
-ghc-corroborate.cabal is up-to-date
-# dhall (for dhall-format-build)
-# dhall-hpack-cabal (for hpack-dhall-build)
-build-uom-plugin.cabal is up-to-date
-Build completed in 0:01m
 ```
 
 ## Testing
@@ -96,7 +60,24 @@ Build completed in 0:01m
 
 ```
 > cabal test all:tests
-...(see below)
+```
+```
+> cabal test uom-plugin:units --test-show-details=always --test-options="--color always"
+uom-plugin:units
+  Get the underlying value with unQuantity
+    unQuantity 1: OK
+    (see stack section below for the full output)
+
+All 78 tests passed (0.00s)
+```
+
+```
+> cabal test thoralf-plugin:units --test-show-details=always --test-options="--color always"
+thoralf-plugin:units
+  Get the underlying value with unQuantity
+    unQuantity 1: OK
+
+All 1 tests passed (0.00s)
 ```
 
 * ### With Stack
@@ -255,9 +236,8 @@ uom-plugin-tutorial> Test suite doctest passed
 Completed 15 action(s).
 ```
 
-To see tests of uom-plugin with color but no build output to the terminal:
+To see tests of `uom-plugin` with color but no build output to the terminal:
 
 ```
 > stack test uom-plugin --no-terminal --test-arguments "--color=always"
-...
 ```
