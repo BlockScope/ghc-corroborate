@@ -46,6 +46,18 @@ number of unit tests.
   `uom-plugin-defs`.
 * Rearranged the modules of each plugin for similarity between both.
 
+## Changes in Use
+
+```diff
+-- {-# OPTIONS_GHC -fplugin Data.UnitsOfMeasure.Plugin #-}
+++ {-# OPTIONS_GHC -fplugin Plugins.UoM #-}
+```
+
+```diff
+-- {-# OPTIONS_GHC -fplugin ThoralfPlugin.Plugin #-}
+++ {-# OPTIONS_GHC -fplugin Plugins.Thoralf #-}
+```
+
 ## Building
 
 To format `**/package.dhall` files and generate `**/*.cabal` files:
