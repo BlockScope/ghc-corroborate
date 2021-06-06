@@ -87,9 +87,18 @@ All 78 tests passed (0.00s)
 > cabal test thoralf-plugin:units --test-show-details=always --test-options="--color always"
 thoralf-plugin:units
   Get the underlying value with unQuantity
-    unQuantity 1: OK
+    unQuantity 3 m:                OK
+    unQuantity 3 s^2:              OK
+    unQuantity 3 m s^-1:           OK
+    unQuantity 3.0 kg m^2 / m s^2: OK
+    unQuantity 1:                  OK
+    unQuantity 1 (1/s):            OK
+    unQuantity 1 1/s:              OK
+    unQuantity 1 s^-1:             OK
+    unQuantity 2 1 / kg s:         OK
+    unQuantity (1 % 2) kg:         OK
 
-All 1 tests passed (0.00s)
+All 10 tests passed (0.00s))
 ```
 
 * ### With Stack
