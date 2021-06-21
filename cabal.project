@@ -1,5 +1,4 @@
 packages:
-    units-parser
     ghc-corroborate
     ghc-tcplugins-extra
     ghc-tcplugins-trace
