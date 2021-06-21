@@ -40,9 +40,23 @@ in  let testopts =
                   [] : List Text
               , when =
                   [ { condition =
-                        "impl(ghc >= 8.10.0)"
+                        "impl(ghc >= 9.0)"
                     , source-dirs =
-                        [ "src-ghc", "src-ghc-8.10" ]
+                        [ "src-ghc-tree", "src-ghc-9.0" ]
+                    , dependencies =
+                        [ { name =
+                              "ghc"
+                          , version =
+                              ">=9.0 && <9.2"
+                          , mixin =
+                              [] : List Text
+                          }
+                        ]
+                    }
+                  , { condition =
+                        "impl(ghc >= 8.10.0) && impl(ghc < 9.0)"
+                    , source-dirs =
+                        [ "src-ghc-flat", "src-ghc-8.10" ]
                     , dependencies =
                         [ { name =
                               "ghc"
@@ -56,7 +70,7 @@ in  let testopts =
                   , { condition =
                         "impl(ghc >= 8.8.0) && impl(ghc < 8.10.0)"
                     , source-dirs =
-                        [ "src-ghc", "src-ghc-8.8" ]
+                        [ "src-ghc-flat", "src-ghc-8.8" ]
                     , dependencies =
                         [ { name =
                               "ghc"
@@ -75,7 +89,7 @@ in  let testopts =
                   , { condition =
                         "impl(ghc >= 8.6.0) && impl(ghc < 8.8.0)"
                     , source-dirs =
-                        [ "src-ghc", "src-ghc-8.6" ]
+                        [ "src-ghc-flat", "src-ghc-8.6" ]
                     , dependencies =
                         [ { name =
                               "ghc"
@@ -94,7 +108,7 @@ in  let testopts =
                   , { condition =
                         "impl(ghc >= 8.4.0) && impl(ghc < 8.6.0)"
                     , source-dirs =
-                        [ "src-ghc", "src-ghc-8.4" ]
+                        [ "src-ghc-flat", "src-ghc-8.4" ]
                     , dependencies =
                         [ { name =
                               "ghc"
@@ -113,7 +127,7 @@ in  let testopts =
                   , { condition =
                         "impl(ghc >= 8.2.0) && impl(ghc < 8.4.0)"
                     , source-dirs =
-                        [ "src-ghc", "src-ghc-8.2" ]
+                        [ "src-ghc-flat", "src-ghc-8.2" ]
                     , dependencies =
                         [ { name =
                               "ghc"
@@ -132,7 +146,7 @@ in  let testopts =
                   , { condition =
                         "impl(ghc >= 8.0.0) && impl(ghc < 8.2.0)"
                     , source-dirs =
-                        [ "src-ghc", "src-ghc-8.0" ]
+                        [ "src-ghc-flat", "src-ghc-8.0" ]
                     , dependencies =
                         [ { name =
                               "ghc"
