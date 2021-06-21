@@ -37,16 +37,11 @@ jobs:
       with:
         version: "4.8.7"
 
-    - name: Cache Key
-      id: cache_key
-      run: echo ::set-output name=key::$(md5sum ./stack/stack-${{ matrix.ghc }}.yaml | awk '{print $1}')
-
-    - uses: actions/cache@v1
+    - uses: actions/cache@v2
       name: Cache ~/.stack
-      id: cache
       with:
         path: ~/.stack
-        key: ${{ matrix.ghc }}-${{ steps.cache_key.outputs.key }}
+        key: ${{ runner.os }}-${{ matrix.ghc }}-stack
 
     - name: build tests
       run: stack test --no-run-tests --no-terminal --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
