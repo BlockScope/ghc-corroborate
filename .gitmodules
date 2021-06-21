@@ -1,6 +1,3 @@
 [submodule "ghc-tcplugins-extra"]
 	path = ghc-tcplugins-extra
 	url = https://github.com/BlockScope/ghc-tcplugins-extra-undef.git
-[submodule "units-parser"]
-	path = units-parser
-	url = https://github.com/blockscope/units-parser
