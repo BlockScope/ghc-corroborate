@@ -1,10 +1,10 @@
 cabal-version: 2.0
 
--- This file has been generated from package.dhall by hpack version 0.34.2.
+-- This file has been generated from package.dhall by hpack version 0.34.5.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: dd5a7ee5256df8935aab2c09ad86495c12a45b032a1e8a976ab5df58fe84a7fd
+-- hash: 2330ad65dfe9514ddd6aaee35ddfff86177e1fd06731f999e1a14ff6429bb596
 
 name:           ghc-corroborate
 version:        0.1.0
@@ -21,7 +21,8 @@ maintainer:     phil.dejoux@blockscope.com
 copyright:      © 2020 Phil de Joux, © 2020 Block Scope Limited
 license:        MPL-2.0
 license-file:   LICENSE.md
-tested-with:    GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.3
+tested-with:
+    GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.3
 build-type:     Simple
 extra-source-files:
     README.md
