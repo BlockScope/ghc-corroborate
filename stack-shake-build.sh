@@ -2,5 +2,5 @@
 
 #set +v
 
-stack install build-uom-plugin
-build-uom-plugin $@
+stack install build-plugins-for-blobs
+build-plugins-for-blobs $@
