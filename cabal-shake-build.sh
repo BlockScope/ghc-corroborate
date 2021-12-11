@@ -2,5 +2,5 @@
 
 #set +v
 
-cabal v2-build build-plugins-for-blobs
-exec cabal v2-run build-plugins-for-blobs -- "$@"
+cabal v2-build build-ghc-corroborate
+exec cabal v2-run build-ghc-corroborate -- "$@"

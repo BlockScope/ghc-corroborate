@@ -1,0 +1,6 @@
+packages:
+    build
+    ghc-tcplugins-extra
+    ghc-corroborate
+tests: True
+write-ghc-environment-files: always

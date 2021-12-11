@@ -1,9 +1,9 @@
   ./../defaults.dhall
-⫽ { name = "build-plugins-for-blobs"
-  , synopsis = "A shake build of uom-plugin."
-  , description = "Builds the packages making up uom-plugin."
+⫽ { name = "build-ghc-corroborate"
+  , synopsis = "A shake build of ghc-corroborate."
+  , description = "Builds the ghc-corroborate package."
   , category = "Build"
-  , executables.build-uom-plugin
+  , executables.build-ghc-corroborate
     =
     { dependencies =
       [ "base"
