@@ -2,9 +2,9 @@ name: stack
 
 on:
   push:
-    branches: [ci-stack, wip/ghc-lib, wip/thoralf]
+    branches: [ci-stack]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
@@ -32,25 +32,11 @@ jobs:
         stack-version: 'latest'
         cabal-version: ${{ matrix.cabal }}
 
-    - uses: pavpanchekha/setup-z3@1.2.2
-      name: setup z3
-      with:
-        version: "4.8.7"
-
     - uses: actions/cache@v2
       name: Cache ~/.stack
       with:
         path: ~/.stack
         key: ${{ runner.os }}-${{ matrix.ghc }}-stack
 
-    - name: build tests
-      run: stack test --no-run-tests --no-terminal --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
-
-    - name: test uom-plugin-tutorial
-      run: stack test uom-plugin-tutorial --no-terminal --test-arguments "--color=always" --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
-
-    - name: test uom-plugin
-      run: stack test uom-plugin --no-terminal --test-arguments "--color=always" --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
-
-    - name: test thoralf-plugin
-      run: stack test thoralf-plugin --no-terminal --test-arguments "--color=always" --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
+    - name: build
+      run: stack build --no-terminal --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml

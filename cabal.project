@@ -1,14 +1,6 @@
 packages:
     ghc-corroborate
     ghc-tcplugins-extra
-    ghc-tcplugins-trace
-    thoralf
-    uom-quantity
-    uom-plugin
-    uom-plugin-defs
-    uom-plugin-tutorial
-    uom-plugin-examples
-    uom-th
     build
 tests: True
 write-ghc-environment-files: always
