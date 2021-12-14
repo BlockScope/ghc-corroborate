@@ -4,7 +4,7 @@ cabal-version: 2.0
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2330ad65dfe9514ddd6aaee35ddfff86177e1fd06731f999e1a14ff6429bb596
+-- hash: d4f169c4f5e4217f2008b64d7ddd6e999e998d548127a8ec8045c6df571bdc9e
 
 name:           ghc-corroborate
 version:        0.1.0
@@ -49,7 +49,7 @@ library
   ghc-options: -Wall -Werror -Wincomplete-uni-patterns -Wcompat -Widentities -Wredundant-constraints
   build-depends:
       base >=4.9.1.0 && <5
-    , ghc-tcplugins-extra >=0.5
+    , ghc-tcplugins-extra
   if impl(ghc >= 9.0)
     hs-source-dirs:
         src-ghc-tree

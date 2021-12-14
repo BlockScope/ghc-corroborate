@@ -16,7 +16,7 @@ in  let testopts = [ "-rtsopts", "-threaded", "-with-rtsopts=-N" ]
           , extra-source-files =
             [ "README.md", "LICENSE.md", "defaults.dhall", "package.dhall" ]
           , library =
-            { dependencies = defs.dependencies # [ "ghc-tcplugins-extra >=0.5" ]
+            { dependencies = defs.dependencies # [ "ghc-tcplugins-extra" ]
             , exposed-modules =
               [ "GhcApi.Constraint"
               , "GhcApi.Predicate"
