@@ -8,7 +8,6 @@
     "GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.3"
 , ghc-options =
   [ "-Wall"
-  , "-Werror"
   , "-Wincomplete-uni-patterns"
   , "-Wcompat"
   , "-Widentities"
