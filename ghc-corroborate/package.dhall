@@ -31,7 +31,16 @@ in  let testopts = [ "-rtsopts", "-threaded", "-with-rtsopts=-N" ]
               ]
             , other-modules = [] : List Text
             , when =
-              [ { condition = "impl(ghc >= 9.0)"
+              [ { condition = "impl(ghc >= 9.2) && impl(ghc < 9.4)"
+                , source-dirs = [ "src-ghc-tree", "src-ghc-9.2" ]
+                , dependencies =
+                  [ { name = "ghc"
+                    , version = ">=9.2 && <9.4"
+                    , mixin = [] : List Text
+                    }
+                  ]
+                }
+              , { condition = "impl(ghc >= 9.0) && impl(ghc < 9.2)"
                 , source-dirs = [ "src-ghc-tree", "src-ghc-9.0" ]
                 , dependencies =
                   [ { name = "ghc"

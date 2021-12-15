@@ -35,7 +35,6 @@ executable build-ghc-corroborate
   build-depends:
       ansi-terminal
     , base
-    , dhall
     , raw-strings-qq
     , shake
     , text

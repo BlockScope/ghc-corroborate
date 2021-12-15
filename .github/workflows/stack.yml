@@ -41,6 +41,3 @@ jobs:
 
     - name: build
       run: stack build --no-terminal --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
-
-
-
