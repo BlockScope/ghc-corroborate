@@ -28,6 +28,7 @@ module GHC.Corroborate
     , module GHC.TcPluginM.Extra
       -- ** TcTypeNats
     , module TcTypeNats
+    , naturalTy, naturalTyCon
       -- ** Class
     , module Class
       -- ** IOEnv
@@ -80,6 +81,7 @@ import TyCoRep
     )
 import Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
+import TysWiredIn (typeNatKind)
 import TcTypeNats (typeNatAddTyCon, typeNatSubTyCon)
 import Class (Class)
 import IOEnv (newMutVar, readMutVar, writeMutVar)
@@ -92,3 +94,6 @@ tcLookupTyCon = TcPluginM.tcLookupTyCon
 
 {-# DEPRECATED lookupOrig "Use 'lookupName' instead" #-}
 lookupOrig = TcPluginM.lookupOrig
+
+naturalTy = typeNatKind
+naturalTyCon = typeNatKindCon

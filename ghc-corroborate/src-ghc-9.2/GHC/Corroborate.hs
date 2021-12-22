@@ -85,7 +85,7 @@ import GHC.Core.TyCo.Rep
     )
 import GHC.Types.Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
-import GHC.Builtin.Types (naturalTy)
+import GHC.Builtin.Types (naturalTyCon, naturalTy)
 import GHC.Builtin.Types.Literals (typeNatAddTyCon, typeNatSubTyCon)
 import GHC (Class)
 import GHC.Data.IOEnv (newMutVar, readMutVar, writeMutVar)

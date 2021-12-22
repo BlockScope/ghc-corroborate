@@ -28,6 +28,7 @@ module GHC.Corroborate
     , module GHC.TcPluginM.Extra
       -- ** GHC.Builtin.Types.Literals
     , module GHC.Builtin.Types.Literals
+    , naturalTy, naturalTyCon
       -- ** GHC
     , module GHC
       -- ** GHC.Data.IOEnv
@@ -82,6 +83,7 @@ import GHC.Core.TyCo.Rep
     )
 import GHC.Types.Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
+import GHC.Builtin.Types (typeNatKind)
 import GHC.Builtin.Types.Literals (typeNatAddTyCon, typeNatSubTyCon)
 import GHC (Class)
 import GHC.Data.IOEnv (newMutVar, readMutVar, writeMutVar)
@@ -94,3 +96,6 @@ tcLookupTyCon = TcPlugin.tcLookupTyCon
 
 {-# DEPRECATED lookupOrig "Use 'lookupName' instead" #-}
 lookupOrig = TcPlugin.lookupOrig
+
+naturalTy = typeNatKind
+naturalTyCon = typeNatKindCon
