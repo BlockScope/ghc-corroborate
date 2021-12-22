@@ -28,6 +28,7 @@ module GHC.Corroborate
     , module GHC.TcPluginM.Extra
       -- ** TcTypeNats
     , module TcTypeNats
+      -- ** GHC.Builtin.Types
     , naturalTy, naturalTyCon
       -- ** Class
     , module Class

@@ -26,9 +26,10 @@ module GHC.Corroborate
     , module GHC.Types.Unique
       -- ** GHC.TcPluginM.Extra
     , module GHC.TcPluginM.Extra
+      -- ** GHC.Builtin.Types
+    , naturalTy, naturalTyCon
       -- ** GHC.Builtin.Types.Literals
     , module GHC.Builtin.Types.Literals
-    , naturalTy, naturalTyCon
       -- ** GHC
     , module GHC
       -- ** GHC.Data.IOEnv
