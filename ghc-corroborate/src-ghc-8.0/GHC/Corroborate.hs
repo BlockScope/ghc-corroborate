@@ -74,7 +74,7 @@ import TcPluginM
     )
 import qualified TcPluginM (tcLookupClass, tcLookupTyCon, lookupOrig)
 import TcRnTypes (TcPlugin(..), TcPluginResult(..), WantedConstraints)
-import TcType (vanillaSkolemTv, tcGetTyVar_maybe, isMetaTyVar)
+import TcType (vanillaSkolemTv, tcGetTyVar_maybe, isMetaTyVar, tcSplitTyConApp_maybe)
 import TyCoRep
     ( UnivCoProvenance(PluginProv)
     , Type(..)
