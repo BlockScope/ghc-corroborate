@@ -20,6 +20,8 @@ module GHC.Corroborate
     , module GHC.Tc.Types
       -- ** GHC.Tc.Utils.TcType
     , module GHC.Tc.Utils.TcType
+      -- ** GHC.Core.Type
+    , module GHC.Core.Type
       -- ** GHC.Core.TyCo.Rep
     , module GHC.Core.TyCo.Rep
       -- ** GHC.Types.Unique
@@ -79,10 +81,8 @@ import GHC.Tc.Plugin
 import qualified GHC.Tc.Plugin as TcPlugin (tcLookupClass, tcLookupTyCon, lookupOrig)
 import GHC.Tc.Types (TcPlugin(..), TcPluginResult(..))
 import GHC.Tc.Utils.TcType (vanillaSkolemTv, tcGetTyVar_maybe, isMetaTyVar)
-import GHC.Core.TyCo.Rep
-    ( UnivCoProvenance(PluginProv)
-    , Type(TyConApp, TyVarTy, AppTy, ForAllTy, FunTy)
-    )
+import GHC.Core.TyCo.Rep (UnivCoProvenance(PluginProv), Type(..), cmpTyLit)
+import GHC.Core.Type (nonDetCmpTc)
 import GHC.Types.Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
 import GHC.Builtin.Types (naturalTyCon, naturalTy)
