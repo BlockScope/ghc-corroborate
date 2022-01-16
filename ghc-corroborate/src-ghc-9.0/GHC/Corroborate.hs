@@ -45,7 +45,7 @@ import GHC.Plugins
     , defaultPlugin, purePlugin, impurePlugin, flagRecompile
     , PredType, FastString(..), Role(..), TyCoVarSet, ModuleName, Module
     , Kind, TyVar, Var, Id, DFunId, Coercion, TyCon(..), Outputable(..), FindResult(..)
-    , (<>), (<+>), ($$)
+    , (<>), (<+>), ($$), vcat
     , isNumLitTy, isStrLitTy, isFamilyTyCon
     , mkNumLitTy, mkStrLitTy
     , mkTyConApp, mkTcTyVar, mkPrimEqPred, mkTyVarTy, isTcTyVar
