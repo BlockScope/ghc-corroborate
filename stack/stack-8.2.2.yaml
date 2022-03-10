@@ -2,6 +2,3 @@ resolver: lts-11.22
 packages:
 - ../build
 - ../ghc-corroborate
-extra-deps:
-- git: https://github.com/clash-lang/ghc-tcplugins-extra
-  commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31

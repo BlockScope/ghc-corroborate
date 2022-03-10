@@ -3,18 +3,7 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages:
-- completed:
-    name: ghc-tcplugins-extra
-    version: 0.4.2
-    git: https://github.com/clash-lang/ghc-tcplugins-extra
-    pantry-tree:
-      size: 4513
-      sha256: f340fc28383d244b58c70a2ea1d2f1b0f0f6a4ccadf72a299f921ab8559d6f74
-    commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
-  original:
-    git: https://github.com/clash-lang/ghc-tcplugins-extra
-    commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
+packages: []
 snapshots:
 - completed:
     size: 609544

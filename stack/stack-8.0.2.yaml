@@ -2,8 +2,6 @@ resolver: lts-9.21
 packages:
 - ../ghc-corroborate
 extra-deps:
-- git: https://github.com/clash-lang/ghc-tcplugins-extra
-  commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
 - Cabal-3.6.2.0@sha256:e2266e14758c1f799220fad7f0d4b0b4ec567d81b7ba3faea17ff76d4c31de95,12437
 - parsec-3.1.14.0@sha256:72d5c57e6e126adaa781ab97b19dc76f68490c0a3d88f14038219994cabe94e1,4356
 - text-1.2.5.0@sha256:791f0f6c97ed96113f17ab520cf0efe1a3a4f883a8c85910a5660567c8241c40,7895
