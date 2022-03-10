@@ -1,4 +1,6 @@
 resolver: lts-18.18
 packages:
-- ../ghc-tcplugins-extra
 - ../ghc-corroborate
+extra-deps:
+- git: https://github.com/BlockScope/ghc-tcplugins-extra-undef
+  commit: 5c8fe7b5f02b6bc460beb4d2aab2372fbbef99a5
