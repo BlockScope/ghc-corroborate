@@ -64,6 +64,7 @@ import GHC.Plugins
     , mkUnivCo, elemVarSet, coreView
     , boolTyCon, promotedTrueDataCon, promotedFalseDataCon
     , getTyVar_maybe, splitTyConApp_maybe, splitFunTy_maybe
+    , unLoc, moduleNameString
     )
 import GHC.Tc.Types.Constraint
     ( Ct(..), CtLoc
@@ -87,7 +88,7 @@ import GHC.Types.Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
 import GHC.Builtin.Types (naturalTyCon, naturalTy)
 import GHC.Builtin.Types.Literals (typeNatAddTyCon, typeNatSubTyCon)
-import GHC (Class)
+import GHC (Class, HsParsedModule(..), HsModule(..))
 import GHC.Data.IOEnv (newMutVar, readMutVar, writeMutVar)
 
 {-# DEPRECATED tcLookupClass "Use 'GHC.Corroborate.Divulge.divulgeClass' instead" #-}

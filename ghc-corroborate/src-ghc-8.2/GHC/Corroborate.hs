@@ -30,8 +30,10 @@ module GHC.Corroborate
     , module TcTypeNats
       -- ** GHC.Builtin.Types
     , naturalTy, naturalTyCon
-      -- ** Class
-    , module Class
+      -- ** GHC
+    , module GHC
+      -- ** HscTypes
+    , module HscTypes
       -- ** IOEnv
     , module IOEnv
       -- * Alternatives
@@ -60,6 +62,7 @@ import GhcPlugins
     , mkUnivCo, elemVarSet, coreView
     , boolTyCon, promotedTrueDataCon, promotedFalseDataCon
     , getTyVar_maybe, splitTyConApp_maybe, splitFunTy_maybe
+    , unLoc, moduleNameString
     )
 import Constraint
     ( Ct(..), CtLoc
@@ -84,7 +87,8 @@ import Unique (nonDetCmpUnique)
 import GHC.TcPluginM.Extra (evByFiat, tracePlugin, lookupModule, lookupName )
 import TysWiredIn (typeNatKind)
 import TcTypeNats (typeNatAddTyCon, typeNatSubTyCon)
-import Class (Class)
+import GHC (Class, HsModule(..))
+import HscTypes (HsParsedModule(..))
 import IOEnv (newMutVar, readMutVar, writeMutVar)
 
 {-# DEPRECATED tcLookupClass "Use 'GHC.Corroborate.Divulge.divulgeClass' instead" #-}
