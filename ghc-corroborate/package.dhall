@@ -10,7 +10,7 @@ in  let testopts = [ "-rtsopts", "-threaded", "-with-rtsopts=-N" ]
               The GHC API changes over time. This package re-exports most GHC
                         imports needed by typechecker plugins from its GHC.Corroborate module
                         with a stable API over multiple GHC versions.''
-          , category = "Type System"
+          , category = "Type System, GHC, Plugin"
           , github = "blockscope/ghc-corroborate"
           , stability = "experimental"
           , extra-source-files =
