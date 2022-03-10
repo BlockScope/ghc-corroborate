@@ -1,6 +1,9 @@
 packages:
     build
-    ghc-tcplugins-extra
     ghc-corroborate
+source-repository-package
+    type: git
+    location: https://github.com/BlockScope/ghc-tcplugins-extra-undef
+    tag: 945e4a55f5f73f2a9d46188203930ed90d4185b6
 tests: True
 write-ghc-environment-files: always
