@@ -7,14 +7,14 @@ packages:
 - completed:
     name: ghc-tcplugins-extra
     version: 0.4.2
-    git: https://github.com/BlockScope/ghc-tcplugins-extra-undef
+    git: https://github.com/clash-lang/ghc-tcplugins-extra
     pantry-tree:
       size: 4513
-      sha256: a768ab7c063c340ec33387fa9edd249fbbdeca19cd80dc057ec75948967da7b3
-    commit: 5c8fe7b5f02b6bc460beb4d2aab2372fbbef99a5
+      sha256: f340fc28383d244b58c70a2ea1d2f1b0f0f6a4ccadf72a299f921ab8559d6f74
+    commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
   original:
-    git: https://github.com/BlockScope/ghc-tcplugins-extra-undef
-    commit: 5c8fe7b5f02b6bc460beb4d2aab2372fbbef99a5
+    git: https://github.com/clash-lang/ghc-tcplugins-extra
+    commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
 - completed:
     hackage: Cabal-3.6.2.0@sha256:e2266e14758c1f799220fad7f0d4b0b4ec567d81b7ba3faea17ff76d4c31de95,12437
     pantry-tree:

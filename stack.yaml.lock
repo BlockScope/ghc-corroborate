@@ -11,10 +11,10 @@ packages:
     pantry-tree:
       size: 4513
       sha256: a768ab7c063c340ec33387fa9edd249fbbdeca19cd80dc057ec75948967da7b3
-    commit: 5c8fe7b5f02b6bc460beb4d2aab2372fbbef99a5
+    commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
   original:
     git: https://github.com/BlockScope/ghc-tcplugins-extra-undef
-    commit: 5c8fe7b5f02b6bc460beb4d2aab2372fbbef99a5
+    commit: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
 snapshots:
 - completed:
     size: 527836

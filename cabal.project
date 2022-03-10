@@ -3,7 +3,7 @@ packages:
     ghc-corroborate
 source-repository-package
     type: git
-    location: https://github.com/BlockScope/ghc-tcplugins-extra-undef
-    tag: 5c8fe7b5f02b6bc460beb4d2aab2372fbbef99a5
+    location: https://github.com/clash-lang/ghc-tcplugins-extra
+    tag: 20a6cc71b6fef6e92bca4eda0abdb776403ceb31
 tests: True
 write-ghc-environment-files: always
