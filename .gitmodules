@@ -1,3 +1,0 @@
-[submodule "ghc-tcplugins-extra"]
-	path = ghc-tcplugins-extra
-	url = https://github.com/BlockScope/ghc-tcplugins-extra-undef.git
