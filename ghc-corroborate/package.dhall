@@ -14,7 +14,12 @@ in  let testopts = [ "-rtsopts", "-threaded", "-with-rtsopts=-N" ]
           , github = "blockscope/ghc-corroborate"
           , stability = "experimental"
           , extra-source-files =
-            [ "README.md", "LICENSE.md", "defaults.dhall", "package.dhall" ]
+            [ "README.md"
+            , "LICENSE.md"
+            , "changelog.md"
+            , "defaults.dhall"
+            , "package.dhall"
+            ]
           , library =
             { dependencies = defs.dependencies # [ "ghc-tcplugins-extra" ]
             , exposed-modules =

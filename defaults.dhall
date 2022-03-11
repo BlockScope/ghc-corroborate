@@ -1,14 +1,14 @@
 { version = "0.1.0"
 , author = "Phil de Joux"
 , maintainer = "phil.dejoux@blockscope.com"
-, copyright = "© 2017-2021 Phil de Joux, © 2017-2021 Block Scope Limited"
+, copyright = "© 2017-2022 Phil de Joux, © 2017-2022 Block Scope Limited"
 , git = "https://github.com/BlockScope/ghc-corroborate.git"
 , bug-reports = "https://github.com/blockscope/ghc-corroborate/issues"
 , license = "MPL-2.0"
 , license-file = "LICENSE.md"
 , tested-with =
-    "GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.4, GHC == 8.10.7, GHC == 9.0.1"
-, extra-source-files = "package.dhall"
+    "GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.4, GHC == 8.10.7, GHC == 9.0.1, GHC == 9.2.2"
+, extra-source-files = ["package.dhall" ]
 , ghc-options =
   [ "-Wall"
   , "-Werror"
