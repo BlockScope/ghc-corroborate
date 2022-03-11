@@ -1,4 +1,4 @@
-  ./../defaults.dhall
+  ../ghc-corroborate/defaults.dhall
 ⫽ { name = "build-ghc-corroborate"
   , synopsis = "A shake build of ghc-corroborate."
   , description = "Builds the ghc-corroborate package."
@@ -11,4 +11,5 @@
     , main = "Main.hs"
     , source-dirs = "."
     }
+  , extra-source-files = [ "package.dhall" ]
   }
