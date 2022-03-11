@@ -4,7 +4,7 @@ cabal-version: 2.0
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5be6b9368a01be5394a49b8e89a2f6d72be2f11cafbbf6ddb815fd02bdac51b6
+-- hash: c06f71ab11c1f9db2542a51a56013fd94163228fda52e359ab6648d0720d529a
 
 name:           ghc-corroborate
 version:        0.1.0
@@ -25,7 +25,6 @@ tested-with:
     GHC == 8.0.2, GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.5, GHC == 8.8.4, GHC == 8.10.7, GHC == 9.0.1, GHC == 9.2.2
 build-type:     Simple
 extra-source-files:
-    README.md
     LICENSE.md
     changelog.md
     defaults.dhall
