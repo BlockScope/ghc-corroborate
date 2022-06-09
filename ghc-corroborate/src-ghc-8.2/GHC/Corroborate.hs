@@ -6,8 +6,10 @@
 module GHC.Corroborate
     (
       -- * Imports from
+      -- ** Plugins
+      module Plugins
       -- ** GhcPlugins
-      module GhcPlugins
+    , module GhcPlugins
       -- ** Constraint
     , module Constraint
       -- ** Predicate
@@ -40,6 +42,7 @@ module GHC.Corroborate
     , tcLookupClass, tcLookupTyCon, lookupOrig
     ) where
 
+import Plugins (CommandLineOption)
 import GhcPlugins
     ( Plugin(..)
     , defaultPlugin

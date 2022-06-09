@@ -6,8 +6,10 @@
 module GHC.Corroborate
     (
       -- * Imports from
+      -- ** GHC.Driver.Plugins
+      module GHC.Driver.Plugins
       -- ** GHC.Plugins
-      module GHC.Plugins
+    , module GHC.Plugins
       -- ** GHC.Tc.Types.Constraint
     , module GHC.Tc.Types.Constraint
       -- ** GHC.Core.Predicate
@@ -42,6 +44,7 @@ module GHC.Corroborate
 
 import Prelude hiding ((<>))
 
+import GHC.Driver.Plugins (CommandLineOption)
 import GHC.Plugins
     ( Plugin(..), PluginRecompile(..)
     , defaultPlugin, purePlugin, impurePlugin, flagRecompile

@@ -6,8 +6,10 @@
 module GHC.Corroborate
     (
       -- * Imports from
+      -- ** Plugins
+      module Plugins
       -- ** GhcPlugins
-      module GhcPlugins
+    , module GhcPlugins
       -- ** Constraint
     , module Constraint
       -- ** Predicate
@@ -42,6 +44,7 @@ module GHC.Corroborate
 
 import Prelude hiding ((<>))
 
+import Plugins (CommandLineOption)
 import GhcPlugins
     ( Plugin(..), PluginRecompile(..)
     , defaultPlugin, purePlugin, impurePlugin, flagRecompile
