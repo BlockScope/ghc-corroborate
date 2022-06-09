@@ -2,9 +2,7 @@ name: cabal
 
 on:
   push:
-    branches: [ci-cabal, main]
   pull_request:
-    branches: [main]
 
 jobs:
   build:
@@ -12,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cabal: ["3.4"]
+        cabal: ["3.6"]
         ghc:
           - "8.2.2"
           - "8.4.4"
@@ -20,7 +18,7 @@ jobs:
           - "8.8.4"
           - "8.10.7"
           - "9.0.1"
-          - "9.2.1"
+          - "9.2.3"
 
     steps:
     - uses: actions/checkout@v2
