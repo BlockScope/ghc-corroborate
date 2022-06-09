@@ -2,26 +2,24 @@ name: stack
 
 on:
   push:
-    branches: [ci-stack, main]
   pull_request:
-    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cabal: ["3.4"]
+        cabal: ["3.6"]
         ghc:
           - "8.2.2"
           - "8.4.4"
           - "8.6.5"
           - "8.8.4"
           - "8.10.7"
-          - "9.0.1"
+          - "9.0.2"
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         submodules: true
 
@@ -38,16 +36,5 @@ jobs:
         path: ~/.stack
         key: ${{ runner.os }}-${{ matrix.ghc }}-stack
 
-    - uses: rwe/actions-hlint-setup@v1
-      name: Set up HLint
-      with:
-        version: "3.3.4"
-
     - name: build
       run: stack build --no-terminal --stack-yaml=./stack/stack-${{ matrix.ghc }}.yaml
-
-    - uses: rwe/actions-hlint-run@v2
-      name: hlint
-      with:
-        path: '["build", "ghc-corroborate"]'
-        fail-on: suggestion
